@@ -55,8 +55,8 @@ class CategoryController extends Controller
         $data = DB::table('categories')
             ->leftJoin('articles', 'categories.id', '=', 'articles.categories_id')
             ->select(
-//                'categories.name',
-//                'articles.id',
+                //                'categories.name',
+                //                'articles.id',
                 'articles.article_title',
                 'articles.article_description',
                 'articles.article_image',
@@ -67,8 +67,6 @@ class CategoryController extends Controller
             ->get();
 
         return  response()->json($data, 200);
-
-
     }
 
     /**
